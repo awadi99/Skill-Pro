@@ -1,5 +1,4 @@
 export const validate = (schema)=>{
-    console.log("Validation middleware running");
     return(req,res,next)=>{
         const {error} = schema.validate(req.body,{aboutEarly:false});
         if(error){
