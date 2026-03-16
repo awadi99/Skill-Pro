@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import authRoutes from "./modules/auth/auth.router.js"
+import userRoutes from "./modules/user/user.router.js";
 
 
 const app = express();
@@ -21,5 +22,6 @@ app.get("/",(req,res)=>{
 });
 
 app.use("/api/auth",authRoutes)
+app.use("/api/users",userRoutes);
 
 export default app;

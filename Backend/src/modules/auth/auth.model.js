@@ -33,6 +33,11 @@ const authSchema = new mongoose.Schema({
         ,select:false
     },
 
+    profilePic:{
+        type:String,
+        default: ""
+    },
+
     xp:{
         type:Number,
         default:0,
@@ -41,6 +46,7 @@ const authSchema = new mongoose.Schema({
         type:String,
         default:"Beginner"
     }
+    
 },{timestamps:true});
 
 const User = mongoose.model("newUser",authSchema);
