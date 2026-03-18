@@ -1,3 +1,4 @@
+import User from "../auth/auth.model.js";
 import { getProfileService,updateProfileService } from "./user.service.js";
 
 export const getProfile = async(req,res)=>{
@@ -24,5 +25,30 @@ export const updateProfile = async(req,res)=>{
         res.status(400).json({
             message:error.message
         });
+    }
+};
+
+
+
+export const uploadProfilePic = async(req,res)=>{
+    try{
+
+        if(!req.file){
+            return res.status(400).json({message:"No file uploaded"});
+        };
+
+        const user = await User.findByIdAndUpdate(
+            req.user.userId,
+            {
+                profilePic:req.file.path
+            },
+            {new:true}
+        );
+        res.json({
+            message:"Profile picture updated",
+            profilePic:user.profilePic
+        });
+    }catch(error){
+        res.status(500).json({message:error.message});
     }
 };
