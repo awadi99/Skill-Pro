@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const sections = ["problem", "solution", "features", "faq"];
+const sections = ["problem", "solution", "features", "fAQ"];
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);

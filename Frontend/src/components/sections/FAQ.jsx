@@ -6,7 +6,7 @@ export default function FAQ() {
     const [active, setActive] = useState(null);
 
     return (
-        <section className="py-20 px-4 bg-neutral-950 text-white" id="faq">
+        <section className="py-20 px-4 bg-neutral-950 text-white" id="fAQ">
 
             <div className="max-w-3xl mx-auto text-center">
 
