@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from '../components/common/Navbar';
 import Hero from '../components/sections/Hero';
 import Problem from '../components/sections/Problem';
@@ -13,7 +13,7 @@ import Footer from '../components/common/Footer';
 
 export default function Landing() {
     return (
-        <div>
+        <div className='bg-neutral-950  overflow-x-hidden text-white contrast-120 '>
             <Navbar />
             <Hero />
             <Problem />
