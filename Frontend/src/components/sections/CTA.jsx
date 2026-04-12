@@ -40,7 +40,7 @@ export default function CTA() {
           className="mt-8"
         >
           <Link
-            to="/signup"
+            to="/register"
             className="inline-block bg-violet-600 hover:bg-violet-500 text-white px-8 py-4 rounded-full text-lg font-semibold transition hover:scale-105"
           >
             Get Started Now

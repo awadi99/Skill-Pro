@@ -72,7 +72,7 @@ export default function Hero() {
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
             <Link
-              to="/signup"
+              to="/register"
               className="w-full sm:w-auto bg-violet-700 text-white px-6 py-3 rounded-4xl hover:animate-pulse font-medium hover:scale-105 transition text-center"
             >
               Get Started

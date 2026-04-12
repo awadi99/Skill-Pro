@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ScrollToHash from './components/scroll/ScrollToHash';
 import Landing from "./pages/Landing";
+import { SignUp } from "./pages/SignUp";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/register" element={<SignUp/>}/>
       </Routes>
 
     </>
