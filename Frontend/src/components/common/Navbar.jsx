@@ -62,7 +62,7 @@ export default function Navbar() {
                     ))}
 
                 </nav>
-
+                
                 <div className="hidden md:flex items-center gap-4">
                     <Link
                         to="/login"
@@ -99,7 +99,7 @@ export default function Navbar() {
                     </Link>
 
                     <Link
-                        to="/signup"
+                        to="/register"
                         className="block bg-violet-600 text-center py-2 rounded-lg"
                     >
                         Get Started
