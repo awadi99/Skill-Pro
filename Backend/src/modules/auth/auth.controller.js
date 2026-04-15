@@ -62,3 +62,14 @@ export const logout = async(req,res)=>{
         });
     }
 };
+
+
+export const googleCallback = async(req,res)=>{
+    try{
+        generateToken(req.user._id,res);
+        res.redirect("http://localhost:5173/");
+    }
+    catch(error){
+        res.redirect("http://localhost:5173/login");
+    }
+}

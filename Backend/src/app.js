@@ -4,6 +4,8 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import authRoutes from "./modules/auth/auth.router.js"
 import userRoutes from "./modules/user/user.router.js";
+import passport from 'passport';
+import "./modules/auth/google.strategy.js";
 
 
 const app = express();
@@ -23,5 +25,8 @@ app.get("/",(req,res)=>{
 
 app.use("/api/auth",authRoutes)
 app.use("/api/users",userRoutes);
+
+
+app.use(passport.initialize());
 
 export default app;
