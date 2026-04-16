@@ -5,6 +5,8 @@ import ScrollToHash from './components/scroll/ScrollToHash';
 import Landing from "./pages/Landing";
 import { SignUp } from "./pages/SignUp";
 import { Login } from "./pages/Login";
+import MainLayout from "./layouts/MainLayout";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   return (
@@ -16,6 +18,10 @@ export default function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/register" element={<SignUp/>}/>
         <Route path='/login' element={<Login/>}/>
+
+        <Route path="/dashboard" element={<MainLayout />}>
+          <Route index element={<Dashboard />} />
+        </Route>
       </Routes>
 
     </>
