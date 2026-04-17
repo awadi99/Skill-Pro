@@ -36,7 +36,7 @@ export default function ProgressChart() {
                     <Line
                         type="monotone"
                         dataKey="value"
-                        stroke="#3b82f6"   // 🔵 blue for data
+                        stroke="#3b82f6"   
                         strokeWidth={3}
                         dot={{ r: 4 }}
                     />
