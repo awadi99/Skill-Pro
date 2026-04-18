@@ -17,7 +17,7 @@ export default function Dashboard() {
                 </p>
                 </div>
                 <div className="w-45 ">
-                <StatCard  title="Daily Streak"  value="15 Days" Icon={Flame} color="text-orange-500" bg_color="bg-orange-700/20"/>
+                <StatCard  title="Daily Streak" value="15 Days" Icon={Flame} color="text-orange-500" bg_color="bg-orange-700/20"/>
                 </div>
                 
             </div>

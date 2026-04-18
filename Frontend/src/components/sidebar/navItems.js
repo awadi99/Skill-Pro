@@ -10,6 +10,8 @@ import {
     ChessKing,
     Sparkle,
     Sparkles,
+    File,
+    FileText,
 } from "lucide-react";
 
 export const navItems = [
@@ -45,6 +47,15 @@ export const navItems = [
         icon: Sparkles,
         highlight: true,
         badge: "AI", 
+        
+    },
+    
+    {
+        name: "Resume Checker",
+        path: "/dashboard/ai",
+        icon: FileText,
+        high: true,
+        badges: "AI", 
         
     },
     {
