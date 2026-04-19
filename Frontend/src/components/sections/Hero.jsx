@@ -2,47 +2,11 @@ import React, { useMemo, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import HeroBackground from "../three/HeroBackground";
+
 const Earth = React.lazy(() => import("../three/Earth"));
 
-function HeroBackground() {
-  const stars = useMemo(() => {
-    return [...Array(120)].map(() => ({
-      width: Math.random() * 2 + 1,
-      height: Math.random() * 2 + 1,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      opacity: Math.random() * 0.8,
-      delay: Math.random() * 5,
-    }));
-  }, []);
 
-  return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      {stars.map((s, i) => (
-        <span
-          key={i}
-          className="absolute bg-white rounded-full animate-twinkle blur-[0.5px]"
-          style={{
-            width: s.width + "px",
-            height: s.height + "px",
-            top: s.top + "%",
-            left: s.left + "%",
-            opacity: s.opacity,
-            animationDelay: s.delay + "s",
-          }}
-        />
-      ))}
-
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,#1e1b4b,#312e81,#4c1d95,#5b21b6)] bg-[length:400%_400%] animate-gradientSlow opacity-30 blur-3xl"></div>
-
-      <div className="absolute top-[-60px] left-[-60px] w-[160px] h-[160px] md:w-[300px] md:h-[300px] bg-purple-700 rounded-full opacity-30 blur-3xl animate-blob"></div>
-
-      <div className="absolute bottom-[-60px] right-[-60px] w-[160px] h-[160px] md:w-[300px] md:h-[300px] bg-violet-600 rounded-full opacity-30 blur-3xl animate-blob animation-delay-2000"></div>
-
-      <div className="absolute top-[50%] left-[50%] w-[140px] h-[140px] md:w-[300px] md:h-[300px] bg-indigo-700 rounded-full opacity-20 blur-3xl animate-blob animation-delay-4000"></div>
-    </div>
-  );
-}
 
 export default function Hero() {
   return (
@@ -55,7 +19,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
           className="text-center md:text-left max-w-md mx-auto md:mx-0"
         >
           <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold leading-tight">
@@ -83,7 +47,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.8}}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.8}}
           className="flex justify-center items-center w-full"
         >
           <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[400px] h-[220px] sm:h-[280px] md:h-[400px]">
