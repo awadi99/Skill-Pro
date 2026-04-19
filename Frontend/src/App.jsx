@@ -9,6 +9,7 @@ import MainLayout from "./layouts/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import Aptitude from "./pages/Aptitude";
 import English from "./pages/English";
+import Leaderboard from './pages/Leaderboard';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route index element={<Dashboard />} />
           <Route path="aptitude" element={<Aptitude />} />
           <Route path="english" element={<English />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
         </Route>
       </Routes>
     </>
