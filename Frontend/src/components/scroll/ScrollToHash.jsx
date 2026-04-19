@@ -2,21 +2,38 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToHash() {
-    const { hash } = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
-        if (hash) {
-            const el = document.getElementById(hash.replace("#", ""));
-            if (el) {
-                setTimeout(() => {
-                    window.scrollTo({
-                        top: el.offsetTop - 80,
-                        behavior: "smooth",
-                    });
-                }, 100);
+        
+        const timer = setTimeout(() => {
+            const lenis = window.lenis;
+
+            
+            const isLenisValid = lenis && typeof lenis.scrollTo === "function";
+
+            if (hash) {
+                const id = hash.replace("#", "");
+                const element = document.getElementById(id);
+                if (element) {
+                    if (isLenisValid) {
+                        lenis.scrollTo(element, { offset: -80, duration: 1 });
+                    } else {
+                        window.scrollTo({ top: element.offsetTop - 80, behavior: "smooth" });
+                    }
+                }
+            } else {
+                
+                if (isLenisValid) {
+                    lenis.scrollTo(0, { immediate: true });
+                } else {
+                    window.scrollTo(0, 0);
+                }
             }
-        }
-    }, [hash]);
+        }, 0.5); 
+
+        return () => clearTimeout(timer);
+    }, [pathname, hash]);
 
     return null;
 }

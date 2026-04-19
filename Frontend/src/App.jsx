@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import ScrollToHash from './components/scroll/ScrollToHash';
 import Landing from "./pages/Landing";
@@ -13,21 +13,20 @@ import English from "./pages/English";
 export default function App() {
   return (
     <>
-
+      
       <ScrollToHash />
 
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/register" element={<SignUp/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path="/register" element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
 
         <Route path="/dashboard" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="aptitude" element={<Aptitude />} />
-          <Route path="english" element={<English/>}/>
+          <Route path="english" element={<English />} />
         </Route>
       </Routes>
-
     </>
   );
 }

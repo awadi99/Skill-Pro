@@ -7,8 +7,11 @@ export default function SmoothScroll() {
       duration: 1.2,
       smoothWheel: true,
       smoothTouch: false,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
+      easing: (t) => 1 - Math.pow(1 - t, 3), 
     });
+
+
+    window.lenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -17,7 +20,10 @@ export default function SmoothScroll() {
 
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    return () => {
+      lenis.destroy();
+      window.lenis = null; 
+    };
   }, []);
 
   return null;
