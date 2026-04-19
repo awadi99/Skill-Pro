@@ -18,6 +18,7 @@ export const SignUp = () => {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(signupSchema),
+    mode: "onBlur", 
   });
 
   const onSubmit = async (data) => {
@@ -27,44 +28,45 @@ export const SignUp = () => {
       reset();
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-[#020617] text-white">
+      
 
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,#020617,#1e1b4b,#4c1d95,#312e81)] opacity-40 blur-2xl"></div>
+      <div className="absolute inset-0 -z-10 pointer-events-none">
 
-        <div className="absolute top-[-80px] left-[20%] w-[250px] h-[250px] bg-purple-600 opacity-20 blur-3xl rounded-full animate-blob"></div>
-        <div className="absolute bottom-[-80px] right-[20%] w-[250px] h-[250px] bg-violet-600 opacity-20 blur-3xl rounded-full animate-blob animation-delay-2000"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1e1b4b_0%,#020617_100%)] opacity-60"></div>
+
+        
+        <div className="absolute top-[-10%] left-[15%] w-[300px] h-[300px] bg-purple-600/10 blur-[90px] rounded-full animate-blob will-change-transform"></div>
+        <div className="absolute bottom-[-10%] right-[15%] w-[300px] h-[300px] bg-violet-600/10 blur-[90px] rounded-full animate-blob animation-delay-2000 will-change-transform"></div>
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 80 }}
+        initial={{ opacity: 0, y: 30 }} 
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="w-full max-w-md p-8 rounded-3xl 
-        bg-gradient-to-br from-white/5 to-white/0 
-        backdrop-blur-xl border border-white/10 
-        shadow-[0_0_60px_rgba(124,58,237,0.15)]"
+          bg-white/[0.02] border border-white/10 
+          backdrop-blur-md shadow-2xl" 
+          
       >
-
         <h2 className="text-3xl font-bold text-center 
-        bg-gradient-to-r from-violet-300 via-purple-400 to-indigo-400 
-        bg-clip-text text-transparent">
+          bg-gradient-to-r from-violet-300 via-purple-400 to-indigo-400 
+          bg-clip-text text-transparent">
           Create Account
         </h2>
 
         <p className="text-center text-gray-400 mt-2 text-sm">
-          Start your journey with S<span className="text-red-700">K</span>ill <span className="text-violet-700">Pro</span>
+          Start your journey with Skill <span className="text-violet-500 font-semibold">Pro</span>
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
-
-          <div className="space-y-5">
-
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-5">
+          <div className="space-y-4">
             {/* Full Name */}
             <div className="relative">
               <Input
@@ -73,10 +75,10 @@ export const SignUp = () => {
                 {...register("fullName")}
               />
               <label className="label-style">Full Name</label>
-              {errors.fullName && <p className="error">{errors.fullName.message}</p>}
+              {errors.fullName && <p className="text-xs text-red-400 mt-1">{errors.fullName.message}</p>}
             </div>
-
             
+            {/* Username */}
             <div className="relative">
               <Input
                 placeholder=" "
@@ -84,10 +86,10 @@ export const SignUp = () => {
                 {...register("userName")}
               />
               <label className="label-style">Username</label>
-              {errors.userName && <p className="error">{errors.userName.message}</p>}
+              {errors.userName && <p className="text-xs text-red-400 mt-1">{errors.userName.message}</p>}
             </div>
-
             
+            {/* Email */}
             <div className="relative">
               <Input
                 type="email"
@@ -96,10 +98,10 @@ export const SignUp = () => {
                 {...register("email")}
               />
               <label className="label-style">Email</label>
-              {errors.email && <p className="error">{errors.email.message}</p>}
+              {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email.message}</p>}
             </div>
-
             
+            {/* Password */}
             <div className="relative">
               <Input
                 type="password"
@@ -108,28 +110,25 @@ export const SignUp = () => {
                 {...register("password")}
               />
               <label className="label-style">Password</label>
-              {errors.password && <p className="error">{errors.password.message}</p>}
+              {errors.password && <p className="text-xs text-red-400 mt-1">{errors.password.message}</p>}
             </div>
-
           </div>
 
-          <div className="w-full">           
-            <Button 
-            className ="w-full"
-            type="submit" loading={loading}>
+          <Button 
+            className="w-full active:scale-[0.98] transition-transform"
+            type="submit" 
+            loading={loading}
+          >
             Register
-          </Button></div>
-
-
+          </Button>
         </form>
 
         <p className="text-sm text-gray-400 mt-6 text-center">
           Already have an account?{" "}
-          <Link to="/login" className="text-violet-400 hover:underline">
+          <Link to="/login" className="text-violet-400 hover:text-violet-300 transition-colors hover:underline">
             Login
           </Link>
         </p>
-
       </motion.div>
     </section>
   );

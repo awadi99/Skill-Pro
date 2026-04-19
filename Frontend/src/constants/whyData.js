@@ -15,4 +15,8 @@ export const whyData = [
       title: "Placement Oriented",
       desc: "Everything is designed to help you crack real company interviews",
     },
+    {
+      title: "Career-Ready Profiles",
+      desc: "Go beyond learning with an AI resume checker that ensures your profile is recruiter-ready and ATS-optimized",
+    },
   ];

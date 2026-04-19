@@ -25,7 +25,7 @@ export default function Earth() {
       >
         
         
-        <img className="z-10 w-10 h-10" src="/image/SkillPro1.png" alt="" />
+        <img className="z-10 w-10 h-10 rounded-full" src="/image/SkillPro1.png" alt="" />
 
         
         <div className="absolute inset-0 border border-white/10 rounded-full orbit-spin">

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
+import Input from '../ui/Input';
+import Button from '../ui/Button';
+import { MailCheck, MapPinCheck, PhoneCall } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -10,7 +13,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,#020617,#0f0a1f,#1a0f2e)]"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 ">
 
                 <div>
                     <h2 className="text-xl font-bold text-violet-300">Skill Pro</h2>
@@ -48,11 +51,23 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <h3 className="font-semibold text-white">Legal</h3>
-                    <Link to="/privacy" className="text-gray-400 hover:text-violet-300 text-sm">Privacy Policy</Link>
-                    <Link to="/terms" className="text-gray-400 hover:text-violet-300 text-sm">Terms & Conditions</Link>
-                    <Link to="/contact" className="text-gray-400 hover:text-violet-300 text-sm">Contact</Link>
+                    <h3 className="font-semibold text-white">Contact Us</h3>
+                    <p  className="text-gray-400 hover:text-violet-300 text-sm flex justify-start items-center gap-2 "><MailCheck size={20} />SkillPro.space@gmail.com</p>
+                    <p className="text-gray-400 hover:text-violet-300 text-sm flex justify-start items-center gap-2"><PhoneCall size={20}/>+919673298788</p>
+                    <p  className="text-gray-400 hover:text-violet-300 text-sm flex justify-start  gap-2"><MapPinCheck size={20}/>Silicon Valley,U.S. state of California</p>
                 </div>
+
+                
+                <div className="flex flex-col gap-2">
+                    <h3 className="font-semibold text-white">Stay Updated</h3>
+                        <p className="text-[14px] text-white/60">Subscribe to our newsletter for the latest updates and opportunities.</p>
+                        <div className="flex justify-between items-center gap-3 w-50 ">
+                        <Input  type="email"className=" bg-white/6 border-white/20 rounded-4xl  " />
+                        <Button type="submit">Subscribe</Button>
+                        </div>
+
+                </div>
+
 
             </div>
 

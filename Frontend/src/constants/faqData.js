@@ -29,4 +29,9 @@ export const faqData = [
       answer:
         "Yes, Skill Pro provides daily tracking and performance insights.",
     },
+
+    {
+      question: "How does the AI Resume Checker work?",
+      answer: "Our AI scans your resume against specific job descriptions to identify missing keywords, evaluate formatting, and provide a compatibility score. It helps you tailor your profile to pass through Applicant Tracking Systems (ATS) more effectively."
+  }
   ];

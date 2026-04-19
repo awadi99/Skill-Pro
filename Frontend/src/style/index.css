@@ -133,3 +133,31 @@ html {
 .counter-spin-reverse {
   animation: spin 20s linear infinite;
 }
+
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scrollX {
+  animation: scrollX 6s linear infinite;
+}
+
+
+@keyframes scrollY {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scrollY {
+  animation: scrollY 6s linear infinite;
+}
