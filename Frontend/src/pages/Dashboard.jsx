@@ -1,10 +1,14 @@
 import StatCard from "../components/dashboard/StatCard";
 import ProgressChart from "../components/dashboard/ProgressChart";
 import { Code2, Brain, Mic, Clock, Flame } from "lucide-react";
-
+import LanguageChart from "../components/dashboard/LanguageChart";
+import DSAChart from "../components/dashboard/DSAChart";
+import ScrollToHash from "../components/scroll/ScrollToHash";
+import Heatmap from "../components/dashboard/HeatMap";
 export default function Dashboard() {
     return (
-        <div className="space-y-6">
+        
+        <div className="space-y-6 ">
 
             
             <div className="flex justify-between items-center gap-5 w-full">
@@ -31,14 +35,18 @@ export default function Dashboard() {
             </div>
 
             {/* Graph Section */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-md">
+            <div className="bg-[070d1f] border border-white/10 rounded-2xl p-5 backdrop-blur-md">
                 <h2 className="text-lg font-semibold mb-4 text-violet-300">
                     Weekly Progress
                 </h2>
 
-                <ProgressChart />
-
+            
+            <ProgressChart />
             </div>
+            <Heatmap/>
+            <LanguageChart/>
+            <DSAChart/>
+
   
             
 

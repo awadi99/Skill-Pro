@@ -161,3 +161,76 @@ html {
 .animate-scrollY {
   animation: scrollY 6s linear infinite;
 }
+
+
+
+
+
+
+
+
+
+/* --- CALENDAR HEATMAP CUSTOMIZATION --- */
+
+/* 1. Base styles for the SVG grid */
+.heatmap-container .react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #64748b; /* slate-500 */
+}
+
+/* Base style for all squares */
+.heatmap-container .react-calendar-heatmap rect {
+  rx: 3px; /* Slightly rounded corners for "SaaS/Medium" style */
+  ry: 3px;
+  stroke: #0f172a; /* Same as background for spacing */
+  stroke-width: 1px;
+}
+
+/* Simple hover effect on cells */
+.heatmap-container .react-calendar-heatmap rect:hover {
+  stroke: #ffffff33; /* Soft white glow */
+  stroke-width: 1.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heatmap-container .react-calendar-heatmap .color-empty {
+  fill: #1e293b; 
+}
+
+
+.heatmap-container .react-calendar-heatmap .color-scale-1 {
+  fill: #3b82f644; 
+}
+
+
+.heatmap-container .react-calendar-heatmap .color-scale-2 {
+  fill: #3b82f6aa; 
+}
+
+
+.heatmap-container .react-calendar-heatmap .color-scale-3 {
+  fill: #60a5fa; 
+}
+
+
+.heatmap-container .react-calendar-heatmap .color-scale-4 {
+  fill: #818cf8; 
+}
+
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
