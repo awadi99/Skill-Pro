@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import SidebarMenu from "./SidebarMenu";
+import SidebarMenu from "../components/sidebar/SidebarMenu";
 
 export default function Sidebar() {
     const [open, setOpen] = useState(false);
@@ -39,10 +39,8 @@ export default function Sidebar() {
 
                 <div className="flex items-center justify-between px-4 py-4">
 
-                    <div className="font-bold text-2xl flex gap-2 justify-center items-center">
-                        <img
-                            className="w-7 h-8 rounded-[50%]"
-                            src="/image/SkillPro.png" alt="" />
+                    <div className="font-bold text-2xl flex gap-2 justify-center items-center mx-10">
+          
                         <div>S<span className="text-red-700">K</span>ILL <span className="text-violet-700">PRO</span></div>
 
                     </div>
