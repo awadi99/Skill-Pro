@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import StatCard from '../dashboard/StatCard';
-import STATS_DATA  from './StatCard.js'; 
+import STATS_DATA  from './StatData.js'; 
 
 const StatCardData = () => {
     return (
