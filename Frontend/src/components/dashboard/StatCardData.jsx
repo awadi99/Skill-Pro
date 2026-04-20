@@ -20,5 +20,4 @@ const StatCardData = () => {
     );
 };
 
-
 export default memo(StatCardData);
