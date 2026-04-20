@@ -1,6 +1,6 @@
 import { Code2, Brain, Mic, Clock } from "lucide-react";
 
-export const STATS_DATA = [
+const STATS_DATA = [
     { 
         id: 1,
         title: "DSA Solved", 
@@ -34,3 +34,6 @@ export const STATS_DATA = [
         bg_color: "bg-orange-700/20" 
     },
 ];
+
+
+export default STATS_DATA;

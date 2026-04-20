@@ -1,4 +1,7 @@
+
+import React ,{memo} from "react";
 function StatCard({ title, value, Icon, color,bg_color }) {
+
     return (
 
 
@@ -26,4 +29,4 @@ function StatCard({ title, value, Icon, color,bg_color }) {
     );
 }
 
-export default StatCard;
+export default memo(StatCard);
