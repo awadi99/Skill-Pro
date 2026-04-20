@@ -3,8 +3,8 @@ import ProgressChart from "../components/dashboard/ProgressChart";
 import { Code2, Brain, Mic, Clock, Flame } from "lucide-react";
 import LanguageChart from "../components/dashboard/LanguageChart";
 import DSAChart from "../components/dashboard/DSAChart";
-import ScrollToHash from "../components/scroll/ScrollToHash";
 import Heatmap from "../components/dashboard/HeatMap";
+import StatCardData from '../components/dashboard/StatCardData';
 export default function Dashboard() {
     return (
         
@@ -26,13 +26,7 @@ export default function Dashboard() {
                 
             </div>
 
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-                <StatCard title="DSA Solved" value="32" Icon={Code2} color ="text-indigo-700" bg_color="bg-indigo-700/20"/>
-                <StatCard title="Aptitude" value="18" Icon={Brain} color="text-violet-700" bg_color="bg-indigo-700/20"/>
-                <StatCard title="English Time" value="120m" Icon={Mic} color="text-green-500" bg_color="bg-green-700/20" />
-                <StatCard title="Study Hours" value="24h" Icon={Clock} color="text-orange-500" bg_color="bg-orange-700/20"/>
-            </div>
+            <StatCardData/>
 
             {/* Graph Section */}
             <div className="bg-[070d1f] border border-white/10 rounded-2xl p-5 backdrop-blur-md">
