@@ -1,17 +1,24 @@
-import React from 'react'
-import { Code2, Brain, Mic, Clock } from "lucide-react";
+import React, { memo } from 'react';
 import StatCard from '../dashboard/StatCard';
+import { STATS_DATA } from './StatCard.js'; 
 
-export default function StatCardData() {
+const StatCardData = () => {
     return (
-
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            <StatCard title="DSA Solved" value="32" Icon={Code2} color="text-indigo-700" bg_color="bg-indigo-700/20" />
-            <StatCard title="Aptitude" value="18" Icon={Brain} color="text-violet-700" bg_color="bg-indigo-700/20" />
-            <StatCard title="English Time" value="120m" Icon={Mic} color="text-green-500" bg_color="bg-green-700/20" />
-            <StatCard title="Study Hours" value="24h" Icon={Clock} color="text-orange-500" bg_color="bg-orange-700/20" />
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 will-change-transform">
+            {STATS_DATA.map((stat) => (
+                <StatCard 
+                    key={stat.id}
+                    title={stat.title}
+                    value={stat.value}
+                    Icon={stat.Icon}
+                    color={stat.color}
+                    bg_color={stat.bg_color}
+                />
+            ))}
         </div>
-    )
-}
+    );
+};
 
+
+export default memo(StatCardData);
