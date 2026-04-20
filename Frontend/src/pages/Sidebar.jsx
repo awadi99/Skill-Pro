@@ -12,7 +12,7 @@ export default function Sidebar() {
                 onClick={() => setOpen(true)}
                 className="md:hidden fixed top-4 left-4 z-100  bg-white/10 p-2 rounded-lg backdrop-blur"
             >
-                <Menu className="text-white hover:animate-ping" />
+                <Menu className="z-100 inset-100 text-white hover:animate-ping" />
             </button>
 
 
@@ -32,7 +32,7 @@ export default function Sidebar() {
           transform transition-transform duration-300
 
           ${open ? "translate-x-0" : "-translate-x-full"}
-          md:translate-x-0 md:static
+          md:translate-x-0 md:fixed
         `}
             >
 
