@@ -1,4 +1,4 @@
-export default function StatCard({ title, value, Icon, color,bg_color }) {
+function StatCard({ title, value, Icon, color,bg_color }) {
     return (
 
 
@@ -25,3 +25,5 @@ export default function StatCard({ title, value, Icon, color,bg_color }) {
         </div>
     );
 }
+
+export default StatCard;
