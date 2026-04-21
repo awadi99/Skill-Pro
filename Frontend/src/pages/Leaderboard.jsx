@@ -1,4 +1,4 @@
-import { ChessKing, Crown, CrownIcon, Mic } from "lucide-react";
+import { CrownIcon } from "lucide-react";
 
 import Box from "../components/leaderboard/Box";
 
