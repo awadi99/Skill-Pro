@@ -43,7 +43,7 @@ export const navItems = [
     },
     {
         name: "Ai Study Plan",
-        path: "/dashboard/ai",
+        path: "/dashboard/aiplan",
         icon: Sparkles,
         highlight: true,
         badge: "AI", 

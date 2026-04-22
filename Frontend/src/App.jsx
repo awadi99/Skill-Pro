@@ -12,6 +12,7 @@ import English from "./pages/English";
 import Leaderboard from './pages/Leaderboard';
 import Profile from "./pages/Profile";
 import EditProfile from "./components/profile/EditProfile";
+import AiStudyPlan from "./pages/AiStudyPlan";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="leaderboard" element={<Leaderboard />} />
           <Route path="profile" element={<Profile />} />
           <Route path="profile/edit" element={<EditProfile/>}/>
+          <Route path = 'aiplan' element={<AiStudyPlan/>}/>
         </Route>
       </Routes>
     </>
