@@ -52,7 +52,7 @@ export const navItems = [
     
     {
         name: "Resume Checker",
-        path: "/dashboard/ai",
+        path: "/dashboard/airesume",
         icon: FileText,
         high: true,
         badges: "AI", 

@@ -13,6 +13,7 @@ import Leaderboard from './pages/Leaderboard';
 import Profile from "./pages/Profile";
 import EditProfile from "./components/profile/EditProfile";
 import AiStudyPlan from "./pages/AiStudyPlan";
+import AIResumeChecker from "./pages/AIResumeChecker";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="profile/edit" element={<EditProfile/>}/>
           <Route path = 'aiplan' element={<AiStudyPlan/>}/>
+          <Route path='airesume' element={<AIResumeChecker/>}/>
         </Route>
       </Routes>
     </>

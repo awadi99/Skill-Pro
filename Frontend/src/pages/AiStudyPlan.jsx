@@ -50,9 +50,3 @@ export default function AiStudyPlan() {
         </div>
     )
 };
-
-
-
-            
-        
-    
